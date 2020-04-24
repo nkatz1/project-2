@@ -1,18 +1,34 @@
 // jshint esversion: 6
 //Req. A
-let revWords1 = str => {
-  let result = "";
-  for (var i = 0; i < str.length; i++) {
-    result = str[i] + result;
-  }
 
-  return result;
+let revWords1 = str => {
+  let rev = "";
+  let answer = [];
+  rev = str.split(" ");
+  for (var i = 0; i < rev.length; i++) {
+    let item = rev[i]
+      .split("")
+      .reverse()
+      .join("");
+    answer.push(item);
+  }
+  return answer.join(" ");
 };
-console.log(revWords1("Thurs"));
+console.log(revWords1("happy clam"));
 
 //
 
 //Req. B
+let revWords2 = str => {
+  let arr = str.split("");
+  let result = "";
+  arr.forEach(char => {
+    result = char + result;
+  });
+
+  return result;
+};
+console.log(revWords2("Delta Echo"));
 
 //Req. C
 let revWords3 = str => {
@@ -21,10 +37,11 @@ let revWords3 = str => {
   for (char of arr) {
     result = char + result;
   }
+  revWords3.reverse();
   return result;
 };
 
-console.log(revWords3("Thurs"));
+console.log(revWords3("Delta Echo"));
 
 //XC
 let containsDuplicates = s => {
